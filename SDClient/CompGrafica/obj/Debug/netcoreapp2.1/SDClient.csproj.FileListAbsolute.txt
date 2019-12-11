@@ -1,0 +1,11 @@
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.deps.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.runtimeconfig.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.runtimeconfig.dev.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.dll
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.pdb
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.csprojAssemblyReference.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.AssemblyInfoInputs.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.AssemblyInfo.cs
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.dll
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.pdb

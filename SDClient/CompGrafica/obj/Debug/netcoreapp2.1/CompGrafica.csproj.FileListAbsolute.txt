@@ -1,0 +1,11 @@
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.csprojAssemblyReference.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.AssemblyInfoInputs.cache
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.AssemblyInfo.cs
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\CompGrafica.deps.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\CompGrafica.runtimeconfig.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\CompGrafica.runtimeconfig.dev.json
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\CompGrafica.dll
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\bin\Debug\netcoreapp2.1\CompGrafica.pdb
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.dll
+C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\CompGrafica.pdb
