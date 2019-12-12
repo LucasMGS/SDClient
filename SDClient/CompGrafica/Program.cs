@@ -20,76 +20,6 @@ namespace SDClient
             Console.Title = "Cliente";
             ConectarAoServidor();
             RequisicaoLoop();
-
-            byte[] Buffer = new byte[client.SendBufferSize];
-            int BytesLidos = default;
-            Menu();
-            var operador = string.Empty;
-            BinaryFormatter formatter = new BinaryFormatter();
-            MemoryStream memory = new MemoryStream();
-
-
-            while (operador != "3")
-            {
-                operador = Console.ReadLine();
-                switch (operador)
-                {
-                    case "1":
-                        caso1(BytesLidos: BytesLidos,
-                              client: client,
-                              Buffer: Buffer,
-                              formatter,
-                              memory);
-                        break;
-
-                    case "2":
-                        Console.WriteLine("Consultando roteamento...");
-
-                        var bf = new BinaryFormatter();
-                        var ms = new MemoryStream();
-
-                        DtoInformacao dtoInfo = new DtoInformacao()
-                        {
-                            Operador = 2
-                        };
-
-                        bf.Serialize(ms, dtoInfo);
-                        client.Send(ms.ToArray());
-
-                        Console.ReadKey();
-                        Console.Clear();
-                        Menu();
-                        break;
-                    case "3":
-                        Console.WriteLine("Conexão desligada!");
-                        client.Close();
-                        break;
-                }
-
-            }
-
-
-        }
-
-        private static void caso1(int BytesLidos, Socket client, byte[] Buffer, BinaryFormatter formatter, MemoryStream memory)
-        {
-            BytesLidos = client.Receive(Buffer);
-            byte[] dadosRecebidos = new byte[BytesLidos];
-            Array.Copy(Buffer, dadosRecebidos, BytesLidos);
-
-            var info = new DtoInformacao();
-
-            Console.WriteLine("Digite o nó destino: ");
-            var no = Console.ReadLine();
-
-            DtoInformacao NoEnviar = new DtoInformacao()
-            {
-                No = no,
-                Operador = 1
-            };
-
-            formatter.Serialize(memory, NoEnviar);
-            client.Send(memory.ToArray());
         }
 
         private static void Menu()
@@ -111,9 +41,10 @@ namespace SDClient
                     Console.WriteLine("Tentativas: {0}", tentativas);
                     client.Connect(IPAddress.Loopback, Porta);
                 }
-                catch (SocketException)
+                catch (SocketException ex)
                 {
                     Console.Clear();
+                    Console.WriteLine("Erro: " + ex.Message);
                 }
             }
             Console.Clear();
@@ -138,19 +69,56 @@ namespace SDClient
             Environment.Exit(0);
         }
 
-        private static void EnviarRequisicao(int operador)
+        private static void EnviarRequisicao()
         {
-            Console.WriteLine("Digite o no que deseja alcançar: ");
-            var no = Console.ReadLine();
-            var dados = new DtoInformacao()
+            Menu();
+            var operador = Console.ReadLine();
+            DtoGrafo dados;
+            switch (operador)
             {
-                No = no,
-                Operador = operador
-            };
+                case "1":
+                    Console.WriteLine("Digite o no de partida: ");
+                    var noPartida = Console.ReadLine();
+                    Console.WriteLine("Digite o no que deseja buscar: ");
+                    var noDestino = Console.ReadLine();
 
-            EnviarDados(dados);
+                    dados = new DtoGrafo()
+                    {
+                        NoPartida = Int32.Parse(noPartida),
+                        NoDestino = Int32.Parse(noDestino),
+                        Operador = 1
+                    };
 
+                    EnviarDados(dados);
+                    break;
 
+                case "2":
+                    Console.WriteLine("Solicitando ao servidor a busca pelo roteamento vizinho!");
+                    dados = new DtoGrafo()
+                    {
+                        Operador = 2
+                    };
+
+                    EnviarDados(dados);
+                    break;
+
+                case "3":
+
+                    dados = new DtoGrafo()
+                    {
+                        Operador = 3
+                    };
+
+                    EnviarDados(dados);
+                    break;
+
+                default:
+                    Console.WriteLine("Requisição incorreta!");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Menu();
+                    break;
+            }
             //if (msg.ToLower() == "sair")
             //{
             //    Sair();
@@ -163,7 +131,7 @@ namespace SDClient
             client.Send(bufferTexto);
         }
 
-        private static void EnviarDados(DtoInformacao dados)
+        private static void EnviarDados(DtoGrafo dados)
         {
             var formatter = new BinaryFormatter();
             var memory = new MemoryStream();

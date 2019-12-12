@@ -9,3 +9,13 @@ C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp
 C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.AssemblyInfo.cs
 C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.dll
 C:\Users\Lucas Moreira\source\repos\CompGrafica\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.pdb
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.deps.json
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.runtimeconfig.json
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.runtimeconfig.dev.json
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.dll
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\bin\Debug\netcoreapp2.1\SDClient.pdb
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.csprojAssemblyReference.cache
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.dll
+C:\Users\lucas\OneDrive\Documentos\GitHub\SDClient\SDClient\CompGrafica\obj\Debug\netcoreapp2.1\SDClient.pdb

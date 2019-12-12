@@ -5,9 +5,10 @@ using System.Text;
 namespace CompGrafica
 {
     [Serializable]
-    public class DtoInformacao
+    public class DtoGrafo
     {
         public int Operador { get; set; }
-        public string No { get; set; }
+        public int NoPartida { get; set; }
+        public int NoDestino { get; set; }
     }
 }
