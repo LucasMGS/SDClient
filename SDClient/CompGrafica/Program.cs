@@ -22,12 +22,12 @@ namespace SDClient
             RequisicaoLoop();
 
             byte[] Buffer = new byte[client.SendBufferSize];
-            int BytesLidos= default;
+            int BytesLidos = default;
             Menu();
             var operador = string.Empty;
             BinaryFormatter formatter = new BinaryFormatter();
             MemoryStream memory = new MemoryStream();
-           
+
 
             while (operador != "3")
             {
@@ -36,7 +36,7 @@ namespace SDClient
                 {
                     case "1":
                         caso1(BytesLidos: BytesLidos,
-                              client:client,
+                              client: client,
                               Buffer: Buffer,
                               formatter,
                               memory);
@@ -53,7 +53,7 @@ namespace SDClient
                             Operador = 2
                         };
 
-                        bf.Serialize(ms,dtoInfo);
+                        bf.Serialize(ms, dtoInfo);
                         client.Send(ms.ToArray());
 
                         Console.ReadKey();
@@ -65,18 +65,18 @@ namespace SDClient
                         client.Close();
                         break;
                 }
-                
+
             }
-        
-            
+
+
         }
 
-        private static void caso1(int BytesLidos,Socket client,byte[] Buffer,BinaryFormatter formatter,MemoryStream memory)
+        private static void caso1(int BytesLidos, Socket client, byte[] Buffer, BinaryFormatter formatter, MemoryStream memory)
         {
             BytesLidos = client.Receive(Buffer);
             byte[] dadosRecebidos = new byte[BytesLidos];
             Array.Copy(Buffer, dadosRecebidos, BytesLidos);
-            
+
             var info = new DtoInformacao();
 
             Console.WriteLine("Digite o nó destino: ");
@@ -94,7 +94,7 @@ namespace SDClient
 
         private static void Menu()
         {
-            Console.WriteLine("1 - Inserir destino");
+            Console.WriteLine("1 - Inserir destino para busca");
             Console.WriteLine("2 - Pedir roteamento");
             Console.WriteLine("3 - Fechar conexão");
             Console.Write("Digite qual operação deseja usar: ");
@@ -150,10 +150,17 @@ namespace SDClient
 
             EnviarDados(dados);
 
+
             //if (msg.ToLower() == "sair")
             //{
             //    Sair();
             //}
+        }
+
+        private static void EnviarTexto(string texto)
+        {
+            byte[] bufferTexto = Encoding.ASCII.GetBytes(texto);
+            client.Send(bufferTexto);
         }
 
         private static void EnviarDados(DtoInformacao dados)
@@ -162,21 +169,20 @@ namespace SDClient
             var memory = new MemoryStream();
 
             formatter.Serialize(memory, dados);
-            //byte[] buffer = Encoding.ASCII.GetBytes(memory.ToArray());
             client.Send(memory.ToArray());
         }
 
         private static void ReceberRequisicao()
         {
             var buffer = new byte[2048];
-            int bytesLidos = client.Receive(buffer,SocketFlags.None);
+            int bytesLidos = client.Receive(buffer, SocketFlags.None);
             if (bytesLidos == 0) return;
             var bytesRecebidos = new byte[bytesLidos];
-            Array.Copy(buffer,bytesRecebidos,bytesLidos);
+            Array.Copy(buffer, bytesRecebidos, bytesLidos);
 
 
             var texto = Encoding.ASCII.GetString(bytesRecebidos);
-            
+
         }
     }
 }
